@@ -25,6 +25,7 @@ build() {
   libtoolize
   chmod +x configure
   # if you have runtime problems: add "--enable-debug" and look into /tmp/epson-inkjet-printer-filter.txt
+  autoreconf -f -i
   ./configure LDFLAGS="$LDFLAGS -Wl,--no-as-needed" --prefix=/opt/$pkgname
   make
 }
